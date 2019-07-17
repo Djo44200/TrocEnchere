@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="BDTroc" path="/BDTroc" reloadable="true"
+ source="org.eclipse.jst.jee.server:BDTroc">
+ 	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+ 	<!-- Définir le pool de connexion vers la base Cours -->
+ 	<!-- Penser à mettre sqljdbc.jar dans le repertoire lib de WEB-INF -->
+ 	
+ 	<!-- 
+ 		name=nom de la dataSource
+ 		driverClassName=nom packagé de la classe du driver utilisé
+ 		type=nom packagé de la classe dataSource
+ 		auth=conteneur receveur
+ 		url=url de connexion à la BDD
+ 		maxTotal=nombre maxi de connexions qui peuvent être allouées depuis le pool.
+ 		maxIdle=nombre maxi de connexion inactives qui peuvent être dans le pool de connexion 
+ 		maxWaitMillis=durée maxi d'attente pour l'obtention d'une connexion.
+ 		acceptCount=nombre maxi de commandes en attente de connexion.
+ 		removeAbandoned= activée la gestion des fuites de connexion
+ 		removeAbandonedTimeOut = nombre de secondes pour passer d'une connexion inactive à abandonnée. 
+ 	-->
+	<Resource
+		name="/DB_Troc"
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		type="javax.sql.DataSource"
+		auth="Container"
+		url="jdbc:sqlserver://11-UC61-12:1433;instanceName=SQLexpress;databasename=DB_Troc"
+		username="TROC" 
+		password="Pa$$w0rd"
+		maxTotal="100"
+		maxIdle="50"
+		maxWaitMillis="10000"
+		acceptCount="100"
+		removeAbandoned="true"
+		removeAbandonedTimeOut="100"
+		/>
+ 
+ </Context>

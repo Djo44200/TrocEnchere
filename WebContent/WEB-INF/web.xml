@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>TrocEnchere</display-name>
+	<welcome-file-list>
+
+
+		<welcome-file>index.html</welcome-file>
+
+
+	</welcome-file-list>
+
+	<servlet>
+		<description></description>
+		<display-name>AfficherErreur</display-name>
+		<servlet-name>AfficherErreur</servlet-name>
+		<jsp-file>/WEB-INF/erreur/erreur.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AfficherErreur</servlet-name>
+		<url-pattern>/erreurPage</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ServDeconnexion</servlet-name>
+		<servlet-class>fr.eni.cours.servlets.ServDeconnexion</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServDeconnexion</servlet-name>
+		<url-pattern>/ServDeconnexion</url-pattern>
+	</servlet-mapping>
+
+	
+	
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
+</web-app>

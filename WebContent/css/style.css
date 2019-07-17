@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+
+.taille{
+	height: 500px;
+	background-color: blue !important ;
+}
+
+*{
+	bagroud-color : blue;
+}
